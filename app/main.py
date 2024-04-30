@@ -12,7 +12,7 @@ templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
 # HTTP GET
 @app.get("/", response_class=HTMLResponse)
 def home_view(request: Request):
-    return templates.TemplateResponse("home.html", {"request": request, "abc": 123})
+    return templates.TemplateResponse({"request": request, "abc": 123}, "home.html")
 
 
 # HTTP POST
